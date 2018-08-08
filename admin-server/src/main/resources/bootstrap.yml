@@ -1,0 +1,21 @@
+spring:
+  application:
+    #对应Config Server所获取的配置文件中的{application}
+    name: microservice-foo
+  cloud:
+    config:
+        #uri: http://localhost:8090/
+        profile: admin
+        label: master
+        #通过eureka获取
+        discovery:
+          service-id: config-server
+          enabled: true
+eureka:
+  client:
+    health-check:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:8071/eureka/,http://localhost:8072/eureka/,http://localhost:8073/eureka/
+    instance:
+      filter-only-up-instances: true

@@ -1,0 +1,31 @@
+server:
+  port: 8091
+spring:
+  rabbitmq:
+    host: 47.95.206.175
+    port: 5672
+    username: guest
+    password: guest
+  application:
+    name: config-server
+    #user location profiles
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+#        native:
+#          search-locations: classpath:/share/
+        git:
+          uri: https://github.com/liuguangxin1hao/server.git
+eureka:
+  client:
+    health-check:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:8071/eureka/,http://localhost:8072/eureka/,http://localhost:8073/eureka/
+    instance:
+      filter-only-up-instances: true
+management:
+  security:
+    enabled: false

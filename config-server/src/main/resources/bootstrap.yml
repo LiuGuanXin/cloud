@@ -1,0 +1,9 @@
+#encrypt:
+#    key: foo
+#    key-store:
+#      location: config-server.keystore
+#      alias: config-server
+#      password: lgx11111
+#      secret: lgx11111
+
+

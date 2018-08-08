@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: provider-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/liu?useSSL=false
+    username: root
+    password: lgx11111
+    driver-class-name: com.mysql.jdbc.Driver
+

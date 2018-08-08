@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: oauth2-client
+server:
+  port: 8085
+security:
+  oauth2:
+    client:
+      client-id: h2kedRv3wRTiSvmNhr6rNtWj
+      client-secret: wZx362Kuem9zWbTbToxYUXHavBC1K24y
+      access-token-uri: http://openapi.baidu.com/oauth/2.0/token
+      user-authorization-uri: http://openapi.baidu.com/oauth/2.0/authorize
+    resource:
+      user-info-uri: https://openapi.baidu.com/rest/2.0/passport/users/getInfo

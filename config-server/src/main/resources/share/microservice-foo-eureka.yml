@@ -1,0 +1,17 @@
+spring:
+  profiles: peer1
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+
+security:
+  basic:
+    #开启http的basic认证
+    enabled: true
+  user:
+    name: user
+    password: 123456

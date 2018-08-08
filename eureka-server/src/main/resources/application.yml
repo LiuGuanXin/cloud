@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: peer1
+server:
+  port: 8071
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    health-check:
+      enabled: true
+    service-url:
+      defaultZone: http://peer2:8072/eureka/,http://peer3:8073/eureka/

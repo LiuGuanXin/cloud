@@ -1,0 +1,10 @@
+server:
+  port: 8099
+eureka:
+  client:
+    health-check:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:8071/eureka/
+    instance:
+      filter-only-up-instances: true

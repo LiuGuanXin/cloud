@@ -1,0 +1,22 @@
+spring:
+  application:
+    #对应Config Server所获取的配置文件中的{application}
+    name: microservice-foo
+  cloud:
+   config:
+  #指定config server的地址
+    # uri: http://localhost:8090/
+  #对应所获取配置文件的{profile}
+     profile: zuul
+  #指定git仓库的分支
+     label: master
+     discovery:
+       service-id: config-server
+       enabled: true
+eureka:
+  client:
+    health-check:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8071/eureka/
+

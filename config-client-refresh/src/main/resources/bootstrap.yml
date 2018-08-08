@@ -1,0 +1,17 @@
+spring:
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    addresses: guest
+  application:
+    #对应Config Server所获取的配置文件中的{application}
+    name: microservice-foo
+  cloud:
+   config:
+  #指定config server的地址
+     uri: http://localhost:8090/
+  #对应所获取配置文件的{profile}
+     profile: refresh
+  #指定git仓库的分支
+     label: master
