@@ -1,1 +1,26 @@
-profile: foo
+microserviceConfig:
+   microservice-FMIS:
+    JZFMISSVR:
+      context: EnterpriseServer
+      ObjectName:
+        SecurityObject:
+          method: Login,sadsasd
+        SecurityObject1:
+          method: Login,sadsa
+
+   microservice-FMIS2:
+     JZFMISSVR:
+       context: EnterpriseServer
+       ObjectName:
+         EnvironmentObject:
+#           method:
+   microservice-FMIS3:
+     JYPTServer:
+       context: EnterpriseServer
+#       ObjectName:
+#         qqqqqqqq:
+#  BZServer:
+#  ZJServer:
+#  JYPTServer:
+
+

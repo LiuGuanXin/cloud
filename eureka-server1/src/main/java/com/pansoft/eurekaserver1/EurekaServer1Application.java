@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @EnableEurekaServer
 public class EurekaServer1Application extends SpringBootServletInitializer {
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(EurekaServer1Application.class);
-    }
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(EurekaServer1Application.class);
+//    }
     public static void main(String[] args) {
         SpringApplication.run(EurekaServer1Application.class, args);
     }

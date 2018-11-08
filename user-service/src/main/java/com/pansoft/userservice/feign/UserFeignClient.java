@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(name = "provider-service")
+//@FeignClient(name = "provider-service")
+@FeignClient(name = "gateway-zuul")
 public interface UserFeignClient {
-    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @RequestMapping(value = "/provider/find", method = RequestMethod.GET)
     public List<User> findAll();
-    @RequestMapping(value = "/check", method = RequestMethod.GET)
+    @RequestMapping(value = "/provider/check", method = RequestMethod.GET)
     public User checkAccount(User user);
 }

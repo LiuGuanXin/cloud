@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @RestController
 public class Test {
-    @Value("${from}")
-    private String from;
-    @GetMapping("/from")
-    public String from() {
-        return this.from;
-    }
+//    @Value("${from}")
+//    private String from;
+//    @GetMapping("/from")
+//    public String from() {
+//        return this.from;
+//    }
 }

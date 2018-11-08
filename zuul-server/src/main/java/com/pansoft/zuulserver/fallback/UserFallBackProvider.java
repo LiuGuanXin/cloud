@@ -1,6 +1,7 @@
 package com.pansoft.zuulserver.fallback;
 
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,11 +14,11 @@ import java.io.InputStream;
 import java.nio.charset.Charset;
 
 @Component
-public class UserFallBackProvider implements FallbackProvider {
+public class UserFallBackProvider implements ZuulFallbackProvider {
     @Override
     public String getRoute() {
         //表明为那个服务提供回退
-        return "PROVIDER-SERVICE";
+        return "user-service";
     }
 
     @Override
@@ -65,8 +66,8 @@ public class UserFallBackProvider implements FallbackProvider {
         };
     }
 
-    @Override
-    public ClientHttpResponse fallbackResponse(Throwable cause) {
-        return null;
-    }
+//    @Override
+//    public ClientHttpResponse fallbackResponse(Throwable cause) {
+//        return null;
+//    }
 }

@@ -1,0 +1,35 @@
+microserviceConfig:
+   miscroservice-FMIS:
+    JZFMISSVR:
+      context: EnterpriseServer
+      ObjectName:
+        SecurityObject:
+          method: Login,sadsasd
+        SecurityObject1:
+          method: Login,sadsa
+
+
+   miscroservice-FMIS2:
+     JZFMISSVR:
+       context: EnterpriseServer
+       ObjectName:
+         EnvironmentObject:
+           method: dasdsa,sdasa
+   miscroservice-FMIS3:
+     JZFMISSVR:
+       context: EnterpriseServer
+       ObjectName:
+        asddas:
+   miscroservice-FMIS4:
+     JZFMISSVR:
+       context: EnterpriseServer
+       ObjectName:
+   qqqqqq:
+     KJDAServer:
+      context: EnterpriseServer
+        ObjectName:
+#  BZServer:
+#  ZJServer:
+#  JYPTServer:
+
+

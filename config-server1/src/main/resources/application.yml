@@ -1,29 +1,31 @@
-server:
-  port: 8091
 spring:
   rabbitmq:
-    host: 47.95.206.175
+    host: 11.10.135.18
     port: 5672
     username: guest
     password: guest
   application:
     name: config-server
     #user location profiles
-#  profiles:
-#    active: native
+  profiles:
+    active: config1
   cloud:
     config:
       server:
 #        native:
 #          search-locations: classpath:/share/
         git:
-          uri: https://github.com/liuguangxin1hao/server.git
+          uri: http://11.10.135.30/SpringCloudDev/spring-cloud-config.git
+          username: root
+          password: abcd1234
+
 eureka:
   client:
     health-check:
       enabled: true
     service-url:
-      defaultZone: http://localhost:8071/eureka/,http://localhost:8072/eureka/,http://localhost:8073/eureka/
+      #defaultZone: http://11.11.48.6:8071/eureka/,http://11.11.48.6:8072/eureka/,http://11.11.48.6:8073/eureka/
+      defaultZone: http://localhost:8071/eureka/
     instance:
       filter-only-up-instances: true
 management:

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: provider-service
+  datasource:
+    url: jdbc:mysql://47.95.206.175:3306/mysql
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+from: 44www

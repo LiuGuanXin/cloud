@@ -1,0 +1,32 @@
+<configuration>
+    <appender name="KafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
+        <encoder class="com.github.danielwegener.logback.kafka.encoding.LayoutKafkaMessageEncoder">
+            <layout class="net.logstash.logback.layout.LogstashLayout" >
+                <includeContext>true</includeContext>
+                <includeCallerData>true</includeCallerData>
+                <customFields>{"server":"eureka-server"}</customFields>
+                <fieldNames class="net.logstash.logback.fieldnames.ShortenedFieldNames"/>
+            </layout>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!--kafka topic 需要与配置文件里面的topic一致 否则kafka会沉默并鄙视你-->
+        <topic>basic-log</topic>
+        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.HostNameKeyingStrategy" />
+        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy" />
+        <producerConfig>bootstrap.servers=11.11.48.13:9092</producerConfig>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    　　<encoder>
+    　　　　<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+    　　</encoder>
+    </appender>
+    <logger name="Application_ERROR">
+        <appender-ref ref="KafkaAppender"/>
+    </logger>
+
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="KafkaAppender" />
+    </root>
+</configuration>

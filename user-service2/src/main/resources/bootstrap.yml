@@ -1,0 +1,4 @@
+app.id: spring-cloud-user
+apollo.meta: http://localhost:8080
+#apollo.bootstrap.enabled: true
+#apollo.bootstrap.namespaces: user2-server,user2-port

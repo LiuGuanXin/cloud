@@ -1,10 +1,33 @@
 server:
   port: 8099
-eureka:
-  client:
-    health-check:
-      enabled: true
-    service-url:
-      defaultZone: http://localhost:8071/eureka/
-    instance:
-      filter-only-up-instances: true
+#eureka:
+#  client:
+#    health-check:
+#      enabled: true
+#    service-url:
+#      defaultZone: http://localhost:8071/eureka/
+#    instance:
+#      filter-only-up-instances: true
+zipkin:
+  storage:
+    StorageComponent: elasticsearch
+    type: elasticsearch
+    elasticsearch:
+      hosts: http://localhost:9200
+      max-requests: 64
+#      cluster: es-cluster
+      index: zipkin
+      index-shards: 5
+      index-replicas: 1
+spring:
+  application:
+    name: zipkin
+  sleuth:
+    sampler:
+      percentage: 1
+    enabled: false
+  rabbitmq:
+    host: 11.10.135.18
+    port: 5672
+    username: guest
+    password: guest
